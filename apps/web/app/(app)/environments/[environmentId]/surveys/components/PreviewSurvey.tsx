@@ -23,6 +23,7 @@ type TPreviewType = "modal" | "fullwidth" | "email";
 
 interface PreviewSurveyProps {
   survey: TSurvey;
+  responseCount: number;
   setActiveQuestionId: (id: string | null) => void;
   activeQuestionId?: string | null;
   previewType?: TPreviewType;
@@ -63,6 +64,7 @@ export default function PreviewSurvey({
   setActiveQuestionId,
   activeQuestionId,
   survey,
+  responseCount,
   previewType,
   product,
   environment,
@@ -205,6 +207,7 @@ export default function PreviewSurvey({
                   previewMode="mobile">
                   <SurveyInline
                     survey={survey}
+                    responseCount={responseCount}
                     brandColor={brandColor}
                     activeQuestionId={activeQuestionId || undefined}
                     isBrandingEnabled={product.linkSurveyBranding}
@@ -221,6 +224,7 @@ export default function PreviewSurvey({
                     <div className="w-full max-w-md px-4">
                       <SurveyInline
                         survey={survey}
+                        responseCount={responseCount}
                         brandColor={brandColor}
                         activeQuestionId={activeQuestionId || undefined}
                         isBrandingEnabled={product.linkSurveyBranding}
@@ -277,6 +281,7 @@ export default function PreviewSurvey({
                 previewMode="desktop">
                 <SurveyInline
                   survey={survey}
+                  responseCount={responseCount}
                   brandColor={brandColor}
                   activeQuestionId={activeQuestionId || undefined}
                   isBrandingEnabled={product.linkSurveyBranding}
@@ -291,6 +296,7 @@ export default function PreviewSurvey({
                   <div className="w-full max-w-md">
                     <SurveyInline
                       survey={survey}
+                      responseCount={responseCount}
                       brandColor={brandColor}
                       activeQuestionId={activeQuestionId || undefined}
                       isBrandingEnabled={product.linkSurveyBranding}

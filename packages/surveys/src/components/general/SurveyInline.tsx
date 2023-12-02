@@ -3,6 +3,7 @@ import { Survey } from "./Survey";
 
 export function SurveyInline({
   survey,
+  responseCount,
   isBrandingEnabled,
   activeQuestionId,
   onDisplay = () => {},
@@ -17,6 +18,7 @@ export function SurveyInline({
     <div id="fbjs" className="formbricks-form h-full w-full">
       <Survey
         survey={survey}
+        responseCount={responseCount}
         isBrandingEnabled={isBrandingEnabled}
         activeQuestionId={activeQuestionId}
         onDisplay={onDisplay}

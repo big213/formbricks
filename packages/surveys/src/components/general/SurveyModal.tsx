@@ -5,6 +5,7 @@ import { Survey } from "./Survey";
 
 export function SurveyModal({
   survey,
+  responseCount,
   isBrandingEnabled,
   activeQuestionId,
   placement,
@@ -39,6 +40,7 @@ export function SurveyModal({
         onClose={close}>
         <Survey
           survey={survey}
+          responseCount={responseCount}
           isBrandingEnabled={isBrandingEnabled}
           activeQuestionId={activeQuestionId}
           onDisplay={onDisplay}

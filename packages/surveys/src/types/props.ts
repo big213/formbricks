@@ -4,6 +4,7 @@ import { TUploadFileConfig } from "@formbricks/types/storage";
 
 export interface SurveyBaseProps {
   survey: TSurvey;
+  responseCount: number;
   isBrandingEnabled: boolean;
   activeQuestionId?: string;
   onDisplay?: () => void;

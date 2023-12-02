@@ -22,6 +22,7 @@ import { TMembershipRole } from "@formbricks/types/memberships";
 interface SummaryPageProps {
   environment: TEnvironment;
   survey: TSurvey;
+  responseCount: number;
   surveyId: string;
   responses: TResponse[];
   webAppUrl: string;
@@ -36,6 +37,7 @@ interface SummaryPageProps {
 const SummaryPage = ({
   environment,
   survey,
+  responseCount,
   surveyId,
   responses,
   webAppUrl,
@@ -66,6 +68,7 @@ const SummaryPage = ({
       <SummaryHeader
         environment={environment}
         survey={survey}
+        responseCount={responseCount}
         surveyId={surveyId}
         webAppUrl={webAppUrl}
         product={product}

@@ -32,6 +32,7 @@ interface SummaryHeaderProps {
   surveyId: string;
   environment: TEnvironment;
   survey: TSurvey;
+  responseCount: number;
   webAppUrl: string;
   product: TProduct;
   profile: TProfile;
@@ -41,6 +42,7 @@ const SummaryHeader = ({
   surveyId,
   environment,
   survey,
+  responseCount,
   webAppUrl,
   product,
   profile,
@@ -60,7 +62,13 @@ const SummaryHeader = ({
       </div>
       <div className="hidden justify-end gap-x-1.5 sm:flex">
         {survey.type === "link" && (
-          <LinkSurveyShareButton survey={survey} webAppUrl={webAppUrl} product={product} profile={profile} />
+          <LinkSurveyShareButton
+            survey={survey}
+            responseCount={responseCount}
+            webAppUrl={webAppUrl}
+            product={product}
+            profile={profile}
+          />
         )}
         {!isViewer &&
         (environment?.widgetSetupCompleted || survey.type === "link") &&
@@ -90,6 +98,7 @@ const SummaryHeader = ({
                 <LinkSurveyShareButton
                   className="flex w-full justify-center p-1"
                   survey={survey}
+                  responseCount={responseCount}
                   webAppUrl={webAppUrl}
                   product={product}
                   profile={profile}
@@ -175,6 +184,7 @@ const SummaryHeader = ({
       <SuccessMessage
         environment={environment}
         survey={survey}
+        responseCount={responseCount}
         webAppUrl={webAppUrl}
         product={product}
         profile={profile}

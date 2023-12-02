@@ -13,6 +13,7 @@ import { TProfile } from "@formbricks/types/profile";
 interface SummaryMetadataProps {
   environment: TEnvironment;
   survey: TSurvey;
+  responseCount: number;
   webAppUrl: string;
   product: TProduct;
   profile: TProfile;
@@ -22,6 +23,7 @@ interface SummaryMetadataProps {
 export default function SuccessMessage({
   environment,
   survey,
+  responseCount,
   webAppUrl,
   product,
   profile,
@@ -58,6 +60,7 @@ export default function SuccessMessage({
     <>
       <ShareEmbedSurvey
         survey={survey}
+        responseCount={responseCount}
         open={showLinkModal}
         setOpen={setShowLinkModal}
         webAppUrl={webAppUrl}

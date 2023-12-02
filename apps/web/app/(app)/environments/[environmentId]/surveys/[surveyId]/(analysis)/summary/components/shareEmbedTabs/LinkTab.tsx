@@ -12,10 +12,11 @@ import { useRef } from "react";
 interface EmailTabProps {
   surveyUrl: string;
   survey: TSurvey;
+  responseCount: number;
   brandColor: string;
 }
 
-export default function LinkTab({ surveyUrl, survey, brandColor }: EmailTabProps) {
+export default function LinkTab({ surveyUrl, survey, responseCount, brandColor }: EmailTabProps) {
   const linkTextRef = useRef(null);
 
   const handleTextSelection = () => {
@@ -56,6 +57,7 @@ export default function LinkTab({ surveyUrl, survey, brandColor }: EmailTabProps
         <SurveyInline
           brandColor={brandColor}
           survey={survey}
+          responseCount={responseCount}
           isBrandingEnabled={false}
           autoFocus={false}
           isRedirectDisabled={false}
