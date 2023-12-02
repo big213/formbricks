@@ -119,7 +119,7 @@ export default function WelcomeCard({
           <p className="text-xs">Takes {calculateTimeToComplete()}</p>
         </div>
       )}
-      {showResponseCount && responseCount !== undefined && (
+      {showResponseCount && responseCount >= 10 && (
         <div className="item-center mt-2 flex text-slate-500">
           <PersonIcon />
           <p className="text-xs">
