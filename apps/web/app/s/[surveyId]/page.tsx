@@ -86,8 +86,6 @@ export default async function LinkSurveyPage({ params, searchParams }: LinkSurve
   }
   const survey = await getSurvey(params.surveyId);
 
-  const responseCount = await getResponseCountBySurveyId(params.surveyId);
-
   const suId = searchParams.suId;
   const isSingleUseSurvey = survey?.singleUse?.enabled;
   const isSingleUseSurveyEncrypted = survey?.singleUse?.isEncrypted;
@@ -187,7 +185,6 @@ export default async function LinkSurveyPage({ params, searchParams }: LinkSurve
   return (
     <LinkSurvey
       survey={survey}
-      responseCount={responseCount}
       product={product}
       userId={userId}
       emailVerificationStatus={emailVerificationStatus}

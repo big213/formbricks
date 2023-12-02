@@ -12,7 +12,6 @@ import ProgressBar from "@/components/general/ProgressBar";
 
 export function Survey({
   survey,
-  responseCount,
   isBrandingEnabled,
   activeQuestionId,
   onDisplay = () => {},
@@ -134,7 +133,6 @@ export function Survey({
           buttonLabel={survey.welcomeCard.buttonLabel}
           timeToFinish={survey.welcomeCard.timeToFinish}
           showResponseCount={survey.welcomeCard.showResponseCount}
-          responseCount={responseCount}
           onSubmit={onSubmit}
           survey={survey}
         />

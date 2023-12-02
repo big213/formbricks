@@ -10,7 +10,6 @@ interface PreviewSurveyProps {
   activeQuestionId?: string | null;
   questions: TSurveyQuestion[];
   brandColor: string;
-  responseCount: number;
 }
 
 export default function PreviewSurvey({
@@ -19,7 +18,6 @@ export default function PreviewSurvey({
   activeQuestionId,
   questions,
   brandColor,
-  responseCount,
 }: PreviewSurveyProps) {
   const [isModalOpen, setIsModalOpen] = useState(true);
 

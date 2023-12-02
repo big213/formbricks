@@ -383,6 +383,7 @@ export const ZSurvey = z.object({
   singleUse: ZSurveySingleUse.nullable(),
   verifyEmail: ZSurveyVerifyEmail.nullable(),
   pin: z.string().nullable().optional(),
+  responseCount: z.number(),
 });
 
 export const ZSurveyInput = z.object({

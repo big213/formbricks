@@ -12,7 +12,6 @@ interface WelcomeCardProps {
   buttonLabel?: string;
   timeToFinish?: boolean;
   showResponseCount?: boolean;
-  responseCount: number;
   onSubmit: (data: TResponseData, ttc: TResponseTtc) => void;
   survey: TSurvey;
 }
@@ -57,7 +56,6 @@ export default function WelcomeCard({
   buttonLabel,
   timeToFinish,
   showResponseCount,
-  responseCount,
   onSubmit,
   survey,
 }: WelcomeCardProps) {
@@ -119,11 +117,11 @@ export default function WelcomeCard({
           <p className="text-xs">Takes {calculateTimeToComplete()}</p>
         </div>
       )}
-      {showResponseCount && responseCount >= 10 && (
+      {showResponseCount && survey.responseCount >= 10 && (
         <div className="item-center mt-2 flex text-slate-500">
           <PersonIcon />
           <p className="text-xs">
-            {responseCount} {responseCount === 1 ? "Response" : "Responses"} so far
+            {survey.responseCount} {survey.responseCount === 1 ? "Response" : "Responses"} so far
           </p>
         </div>
       )}

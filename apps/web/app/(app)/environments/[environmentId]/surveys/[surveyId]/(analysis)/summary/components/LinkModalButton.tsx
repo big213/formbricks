@@ -11,7 +11,6 @@ import { TProfile } from "@formbricks/types/profile";
 
 interface LinkSurveyShareButtonProps {
   survey: TSurvey;
-  responseCount: number;
   className?: string;
   webAppUrl: string;
   product: TProduct;
@@ -20,7 +19,6 @@ interface LinkSurveyShareButtonProps {
 
 export default function LinkSurveyShareButton({
   survey,
-  responseCount,
   className,
   webAppUrl,
   product,
@@ -44,7 +42,6 @@ export default function LinkSurveyShareButton({
       {showLinkModal && (
         <ShareEmbedSurvey
           survey={survey}
-          responseCount={responseCount}
           open={showLinkModal}
           setOpen={setShowLinkModal}
           product={product}
