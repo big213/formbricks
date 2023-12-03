@@ -8,7 +8,7 @@ import { checkValidity } from "@/app/s/[surveyId]/lib/prefilling";
 import { REVALIDATION_INTERVAL, WEBAPP_URL } from "@formbricks/lib/constants";
 import { createPerson, getPersonByUserId } from "@formbricks/lib/person/service";
 import { getProductByEnvironmentId } from "@formbricks/lib/product/service";
-import { getResponseBySingleUseId } from "@formbricks/lib/response/service";
+import { getResponseBySingleUseId, getResponseCountBySurveyId } from "@formbricks/lib/response/service";
 import { getSurvey } from "@formbricks/lib/survey/service";
 import { TResponse } from "@formbricks/types/responses";
 import type { Metadata } from "next";
