@@ -8,7 +8,6 @@ const createContainerId = () => `formbricks-survey-container`;
 
 interface SurveyProps {
   survey: TSurvey;
-  responseCount: number;
   brandColor: string;
   isBrandingEnabled: boolean;
   activeQuestionId?: string;
@@ -32,7 +31,6 @@ interface SurveyModalProps extends SurveyProps {
 
 export const SurveyInline = ({
   survey,
-  responseCount,
   brandColor,
   isBrandingEnabled,
   activeQuestionId,
@@ -49,7 +47,6 @@ export const SurveyInline = ({
   useEffect(() => {
     renderSurveyInline({
       survey,
-      responseCount,
       brandColor,
       isBrandingEnabled,
       containerId,
@@ -73,7 +70,6 @@ export const SurveyInline = ({
     onDisplay,
     onResponse,
     survey,
-    responseCount,
     autoFocus,
     prefillResponseData,
     isRedirectDisabled,

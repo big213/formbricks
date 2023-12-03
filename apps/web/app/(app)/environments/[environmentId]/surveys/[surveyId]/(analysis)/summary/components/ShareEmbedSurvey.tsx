@@ -15,7 +15,6 @@ import WebpageTab from "./shareEmbedTabs/WebpageTab";
 
 interface ShareEmbedSurveyProps {
   survey: TSurvey;
-  responseCount: number;
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   webAppUrl: string;
@@ -24,7 +23,6 @@ interface ShareEmbedSurveyProps {
 }
 export default function ShareEmbedSurvey({
   survey,
-  responseCount,
   open,
   setOpen,
   webAppUrl,
@@ -82,12 +80,7 @@ export default function ShareEmbedSurvey({
               {isSingleUseLinkSurvey ? (
                 <LinkSingleUseSurveyModal survey={survey} surveyBaseUrl={webAppUrl} />
               ) : activeId === "link" ? (
-                <LinkTab
-                  surveyUrl={surveyUrl}
-                  survey={survey}
-                  responseCount={responseCount}
-                  brandColor={surveyBrandColor}
-                />
+                <LinkTab surveyUrl={surveyUrl} survey={survey} brandColor={surveyBrandColor} />
               ) : activeId === "email" ? (
                 <EmailTab surveyId={survey.id} email={email} />
               ) : activeId === "webpage" ? (

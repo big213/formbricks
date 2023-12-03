@@ -18,7 +18,6 @@ import { TUploadFileConfig } from "@formbricks/types/storage";
 
 interface LinkSurveyProps {
   survey: TSurvey;
-  responseCount: number;
   product: TProduct;
   userId?: string;
   emailVerificationStatus?: string;
@@ -30,7 +29,6 @@ interface LinkSurveyProps {
 
 export default function LinkSurvey({
   survey,
-  responseCount,
   product,
   userId,
   emailVerificationStatus,
@@ -135,7 +133,6 @@ export default function LinkSurvey({
         )}
         <SurveyInline
           survey={survey}
-          responseCount={responseCount}
           brandColor={brandColor}
           isBrandingEnabled={product.linkSurveyBranding}
           onDisplay={async () => {

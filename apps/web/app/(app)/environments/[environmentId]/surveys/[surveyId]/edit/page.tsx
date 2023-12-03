@@ -22,17 +22,16 @@ export const generateMetadata = async ({ params }) => {
 };
 
 export default async function SurveysEditPage({ params }) {
-  const [survey, product, environment, actionClasses, attributeClasses, responseCount, team, session] =
-    await Promise.all([
-      getSurvey(params.surveyId),
-      getProductByEnvironmentId(params.environmentId),
-      getEnvironment(params.environmentId),
-      getActionClasses(params.environmentId),
-      getAttributeClasses(params.environmentId),
-      getResponseCountBySurveyId(params.surveyId),
-      getTeamByEnvironmentId(params.environmentId),
-      getServerSession(authOptions),
-    ]);
+  const [survey, product, environment, actionClasses, attributeClasses, team, session] = await Promise.all([
+    getSurvey(params.surveyId),
+    getProductByEnvironmentId(params.environmentId),
+    getEnvironment(params.environmentId),
+    getActionClasses(params.environmentId),
+    getAttributeClasses(params.environmentId),
+    getResponseCountBySurveyId(params.surveyId),
+    getTeamByEnvironmentId(params.environmentId),
+    getServerSession(authOptions),
+  ]);
 
   if (!session) {
     throw new Error("Session not found");
@@ -65,7 +64,6 @@ export default async function SurveysEditPage({ params }) {
         environment={environment}
         actionClasses={actionClasses}
         attributeClasses={attributeClasses}
-        responseCount={responseCount}
         membershipRole={currentUserMembership?.role}
       />
     </>

@@ -247,7 +247,9 @@ export const getSurveys = async (environmentId: string, page?: number): Promise<
           where: {
             environmentId,
           },
-          select: selectSurvey,
+          select: {
+            ...selectSurvey,
+          },
           take: page ? ITEMS_PER_PAGE : undefined,
           skip: page ? ITEMS_PER_PAGE * (page - 1) : undefined,
         });
